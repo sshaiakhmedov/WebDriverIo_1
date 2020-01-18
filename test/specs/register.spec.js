@@ -2,7 +2,7 @@ const {expect} = require ('chai');
 const email=Math.random().toFixed(4)+'e.shayakhmedov@gmail.com';
 
 const url_reg='https://stage.pasv.us/user/register';
-const url_log='https://stage.pasv.us/user/login';
+const url_log='https://stage.pasv.us/user/login/';
 const user ={
     firstName: 'John',
     lastName: 'Shaiakhmedov',
