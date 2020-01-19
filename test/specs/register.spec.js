@@ -1,5 +1,5 @@
 
-const {urlRegister, urlLogin, user, pageReg, pageRegSelector, pageLog}=require('./register_data');
+const {urlRegister, urlLogin, user, pageReg, pageRegSelector, pageLog, pageConfirmation}=require('./register_data');
 const {expect} = require ('chai');
 
 describe('Register page', () => {
@@ -108,4 +108,13 @@ describe('User Login should let the registered user login', () => {
          element.click();
          browser.pause(5000);
      })
+});
+
+describe('Confirmation of Registered user', () => {
+    it('should have a correct title', () => {
+        const actualH1text = $('h1').getText();
+        const expectedH1Text = pageConfirmation.h1;
+        expect(actualH1text).equal(expectedH1Text);
+        browser.pause(1000);
+    });
 });

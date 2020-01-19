@@ -10,21 +10,3 @@ describe('Create Day report', () => {
         browser.pause(4000);
     });
 });
-
-    // it('should have the right title', () => {
-    //     browser.url(new url of daily reports);
-    //     const actualTitle = browser.getTitle();
-    //     const expectedTitle = page_log.title;
-    //     expect(actualTitle).eq(expectedTitle)cd wc
-    // });
-
-
-
-// describe('New User Confirmation page', () => {
-//
-//     it('should have the right title', () => {
-//         browser.url(url_log);
-//         const actualTitle = browser.getTitle();
-//         const expectedTitle = page_log.title;
-//         expect(actualTitle).eq(expectedTitle)
-//     });
