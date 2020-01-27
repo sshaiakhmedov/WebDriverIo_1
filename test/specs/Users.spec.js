@@ -52,14 +52,13 @@ describe('Select student Roles users', () => {
        const element=$('#root > div > div > div.container > div > div > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div > div.css-1hwfws3 > div.css-1wa3eu0-placeholder');
         element.click();
         browser.pause(2000);
-        // const el2=$('#root > div > div > div.container > div > div > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div > div.css-1hwfws3 > div.css-1g6gooi');
-        // el2.click();
     });
 
-    // it('should click student option from dropdown list', () => {
-    //     const element=$('//div[contains(@class,\'css-1uccc91-singleValue\')]').getText();
-    //     element.selectByVisibleText('student');
-    //     browser.pause(3000);
-    // });
+    //этот тест никак не проходит
+     it('should click student option from dropdown list', () => {
+         const element=$('div.container:nth-child(4) div.row div.col div.row:nth-child(2) div.col:nth-child(2) div.form-group div.css-2b097c-container:nth-child(2) div.css-yk16xz-control div.css-1hwfws3 > div.css-1uccc91-singleValue');
+         element.click();
+         browser.pause(3000);
+    });
 
 });
