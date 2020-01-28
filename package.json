@@ -7,7 +7,7 @@
     "test": "./node_modules/.bin/wdio wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "sulaiman",
   "license": "ISC",
   "devDependencies": {
     "@wdio/cli": "^5.18.5",
