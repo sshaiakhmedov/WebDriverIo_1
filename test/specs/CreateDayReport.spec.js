@@ -36,7 +36,7 @@ describe('Create daily report', () => {
     browser.pause(1000);
   });
 
-  it('should mark Code Practis', () => {
+  it('should mark Code Practice', () => {
     const element = $('//input[@id=\'input-5\']');
     element.click();
   });
