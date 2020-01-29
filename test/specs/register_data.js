@@ -1,5 +1,6 @@
 // const HOST = 'https://stage.pasv.us';
 const urlRegister='https://stage.pasv.us/user/register';
+const urlCards='https://stage.pasv.us/flash';
 const urlLogin='https://stage.pasv.us/user/login';
 const urlDiary='https://stage.pasv.us/diary';
 const email=Math.random().toFixed(4)+'e.shayakhmedov@gmail.com';
@@ -50,4 +51,4 @@ const admin = {
   password: '11111',
 };
 
-module.exports={ admin, urlDiary, urlRegister, urlLogin, user, pageReg, pageRegSelector, pageLog, pageConfirmation};
+module.exports={urlCards, admin, urlDiary, urlRegister, urlLogin, user, pageReg, pageRegSelector, pageLog, pageConfirmation};

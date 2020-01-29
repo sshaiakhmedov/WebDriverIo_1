@@ -1,6 +1,7 @@
 const {expect} = require('chai');
 const {admin, urlLogin} = require('./register_data');
 
+//Test Scenario Student Roles_1
 describe('Select student Roles users', () => {
   it('should Login as admin', () => {
     browser.url(urlLogin);
@@ -19,7 +20,14 @@ describe('Select student Roles users', () => {
     const actualH1Title = $('#root > div > div > div.container > div > div > h1 > span').getText();
     const expectedH1Title = 'Users';
     expect(actualH1Title).eq(expectedH1Title);
-    browser.pause(1000);
+    browser.pause(3000);
+  });
+
+  it('should have `Get all roles. Success` notification title', () => {
+    const actualH1Title = $('//h4[@class=\'notification-title\']').getText();
+    const expectedH1Title = 'Get all groups. OK';
+    expect(actualH1Title).eq(expectedH1Title);
+    browser.pause(5000);
   });
 
   it('should click Refresh button', () => {
@@ -51,14 +59,16 @@ describe('Select student Roles users', () => {
     // const element=$('//body/div[@id=\'root\']/div/div/div[@class=\'container\']/div[@class=\'row\']/div[@class=\'col\']/div/div/form/div[@class=\'row\']/div[2]/div[1]/div[1]/div[1]');
     const element=$('#root > div > div > div.container > div > div > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div > div.css-1hwfws3 > div.css-1wa3eu0-placeholder');
     element.click();
-    browser.pause(2000);
+    browser.pause(1000);
   });
 
   //этот тест никак не проходит
-  it('should click student option from dropdown list', () => {
-    const element=$('div.container:nth-child(4) div.row div.col div.row:nth-child(2) div.col:nth-child(2) div.form-group div.css-2b097c-container:nth-child(2) div.css-yk16xz-control div.css-1hwfws3 > div.css-1uccc91-singleValue');
-    element.click();
-    browser.pause(3000);
-  });
+  // it('should click `student` option from dropdown list', () => {
+  //   const element=$('//body//div[@class=\'row\']//div[@class=\'row\']//div[2]//div[1]//div[1]//div[1]//div[1]//div[2]');
+  //   element.selectByVisibleText('student');
+  //   browser.pause(1000);
+  // });
+
+
 
 });
