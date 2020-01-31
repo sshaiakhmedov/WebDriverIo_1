@@ -23,12 +23,12 @@ describe('Select student Roles users', () => {
     browser.pause(3000);
   });
 
-  it('should have `Get all roles. Success` notification title', () => {
-    const actualH1Title = $('//h4[@class=\'notification-title\']').getText();
-    const expectedH1Title = 'Get all groups. OK';
-    expect(actualH1Title).eq(expectedH1Title);
-    browser.pause(5000);
-  });
+  // it('should have `Get all roles. Success` notification title', () => {
+  //   const actualH1Title = $('//h4[@class=\'notification-title\']').getText();
+  //   const expectedH1Title = 'Get all groups. OK';
+  //   expect(actualH1Title).eq(expectedH1Title);
+  //   browser.pause(5000);
+  // });
 
   it('should click Refresh button', () => {
     const element = $('#root > div > div > div.container > div > div > h1 > button');
@@ -36,39 +36,18 @@ describe('Select student Roles users', () => {
     browser.pause(3000);
   });
 
-  // it('should fill up Name text field', () => {
-  //     const element = $('form input[name="name"]');
-  //     element.setValue('Sulaiman');
-  //     browser.pause(2000);
-  // });
-  //
-  // it('should check the Sulaiman user is their', () => {
-  //     const actualName = $('#root > div > div > div.container > div > div > div > div > div > div.rt-table > div.rt-tbody > div > div > div:nth-child(2) > div > div.d-flex.flex-row > a').getText();
-  //     const expectedName=actual.includes('Sulaiman');
-  //     expect(actualName).notInclude(expectedName);
-  // });
-
-  // it('should click button Delete  next to user with Sulaiman name', () => {
-  //     const element = $('#root > div > div > div.container > div > div > div > div > div > div.rt-table > div.rt-tbody > div > div > div:nth-child(5) > button');
-  //     element.click();
-  //     browser.pause(2000);
-  // });
-
-
   it('should click Roles dropdown list', () => {
-    // const element=$('//body/div[@id=\'root\']/div/div/div[@class=\'container\']/div[@class=\'row\']/div[@class=\'col\']/div/div/form/div[@class=\'row\']/div[2]/div[1]/div[1]/div[1]');
-    const element=$('#root > div > div > div.container > div > div > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div > div.css-1hwfws3 > div.css-1wa3eu0-placeholder');
+    const element=$('//*[@id="root"]/div/div/div[4]/div/div/div/div/form/div[2]/div[2]/div/div/div/div[1]/div[1]');
     element.click();
-    browser.pause(1000);
+    browser.pause(3000);
+
+    const element2=$('');
+    element2.click();
   });
 
-  //этот тест никак не проходит
-  // it('should click `student` option from dropdown list', () => {
-  //   const element=$('//body//div[@class=\'row\']//div[@class=\'row\']//div[2]//div[1]//div[1]//div[1]//div[1]//div[2]');
-  //   element.selectByVisibleText('student');
-  //   browser.pause(1000);
-  // });
-
-
-
 });
+
+//From Sergey Troyeglazov to Everyone:  10:21 PM
+// 'h4.notification-title' через CSS
+// From anna_ to Everyone:  10:21 PM
+// $('//notification-wrapper .notification-title')

@@ -2,7 +2,7 @@ const {expect} = require('chai');
 const {admin, urlDiary, urlLogin} = require('./register_data');
 
 describe('Create daily report', () => {
-  it('should Login as admin', () => {
+  before ('Login as Admin', ()=>{
     browser.url(urlLogin);
     $('form input[name="email"]').setValue(admin.emailLogin);
     $('form input[name="password"]').setValue(admin.password);
