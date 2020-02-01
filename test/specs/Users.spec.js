@@ -39,10 +39,9 @@ describe('Select student Roles users', () => {
   it('should click Roles dropdown list', () => {
     const element=$('//*[@id="root"]/div/div/div[4]/div/div/div/div/form/div[2]/div[2]/div/div/div/div[1]/div[1]');
     element.click();
-    browser.pause(3000);
-
-    const element2=$('');
-    element2.click();
+    browser.pause(2000);
+    // $('//div[2]/div[4]/div/div[4]').selectByVisibleText('student');
+    //browser.pause(3000);
   });
 
 });
