@@ -92,12 +92,12 @@ describe('Cards page--> Create new FlashGroup', () => {
     browser.pause(600);
   });
 
-    // it('should grouped has correct description',function (){
-    //   const actual=$('//div[@class="result mt-4"]//p').getText();
-    //   const expected='MockInterview_qa5';
-    //   expect(actual).eq(expected);
-    //   browser.pause(500);
-    // });
+  // it('should grouped has correct description',function (){
+  //   const actual=$('//div[@class="result mt-4"]//p').getText();
+  //   const expected='MockInterview_qa5';
+  //   expect(actual).eq(expected);
+  //   browser.pause(500);
+  // });
 });
 
 
