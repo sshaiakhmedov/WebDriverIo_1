@@ -5,9 +5,9 @@ describe('Create daily report', () => {
   before ('Login as Admin', ()=>{
     browser.url(urlLogin);
     $('//input[@name="email"]').setValue(admin.emailLogin);
-   //$('form input[name="password"]').setValue(admin.password);
+   //$('form input[name="password"]').setValue(admin.password);//CSS selector
     $('//input[@name="password"]');
-    //$('form button[type="submit"]').click();
+    //$('form button[type="submit"]').click();//CSS selector
     $('button[@type="submit"]').click();
     browser.pause(2000);
   });
