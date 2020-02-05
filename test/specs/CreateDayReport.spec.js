@@ -2,23 +2,20 @@ const {expect} = require('chai');
 const {admin, urlDiary, urlLogin} = require('./register_data');
 
 describe('Create daily report', () => {
-  before ('Login as Admin', ()=>{
+  before ('GIVEN we are Login as Admin', ()=>{
     browser.url(urlLogin);
     $('//input[@name="email"]').setValue(admin.emailLogin);
-   //$('form input[name="password"]').setValue(admin.password);//CSS selector
-    $('//input[@name="password"]');
-    //$('form button[type="submit"]').click();//CSS selector
-    $('button[@type="submit"]').click();
-    browser.pause(2000);
+    $('//input[@name="password"]').setValue(admin.password);
+    $('//button[@type="submit"]').click();
+    browser.pause(500);
   });
 
-  it('should go to Users page', () => {
-    const element = $('#site-menu > ul > li:nth-child(6) > a');
-    //const element = $('//a[@class='nav-link active']');
-    element.click();
+  it('AND it should redirect to Diary page', () => {
+    const diary = $('//[@id="site-menu"]//[@qa="diary-link"]');
+    diary.click();
   });
 
-  it('should have Daily reports h1 title', () => {
+  it('AND you should have Daily reports h1 title', () => {
     const actualH1Title = $('//h1[contains(text(),\'Daily reports\')]').getText();
     const expectedH1Title = 'Daily reports';
     expect(actualH1Title).eq(expectedH1Title);
