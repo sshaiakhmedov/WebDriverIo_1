@@ -1,5 +1,8 @@
-const {expect} = require('chai');
-const {admin, urlDiary, urlLogin} = require('./register_data');
+const {expect} = require('chai');//Before Babel
+import {expect} from 'chai';//with Babel
+
+const {admin, urlDiary, urlLogin} = require('./register_data');//before babel
+import {admin, urlDiary, urlLogin} from './register_data';//with Babel
 
 describe('Create daily report', () => {
   before('GIVEN we are Login as Admin', () => {
