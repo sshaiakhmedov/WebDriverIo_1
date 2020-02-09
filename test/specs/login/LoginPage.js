@@ -1,6 +1,8 @@
 import Page from '../Page.js'; //типа приглашение
 
-//через extends мы inheritance делаем
+//через extends мы inheritance делаем одного класса на другой
+//class - способ организации фукнций и каких-то значений.
+//как Objects нужны чтобы организовать данные, - например Array, Object.
 class LoginPage extends Page {
 
     get email () {
@@ -18,7 +20,7 @@ class LoginPage extends Page {
 
        get h1 () {
            return browser.$('//h1');
-       }
+       };
 
     login () {
         this.open();
@@ -28,6 +30,7 @@ class LoginPage extends Page {
         browser.pause(3000);
     };
 
+    //open() - method
     open (){
         super.open('https://stage.pasv.us/user/login');
     };

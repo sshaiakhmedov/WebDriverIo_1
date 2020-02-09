@@ -1,11 +1,10 @@
 import { expect } from 'chai';
 import LoginPage from './LoginPage';
-import ProfilePage from "../profile/ProfilePage";
 
 //login.spec - пишем spec, чтобы определялся как файл тестирования
 
 
-describe('LOGIN (Positive Testing)', () => {
+describe('LOGIN (Negative Testing)', () => {
     it('should open login page', () => {
         LoginPage.open();
         browser.pause(5000);
@@ -22,7 +21,7 @@ describe('LOGIN (Positive Testing)', () => {
     });
 
     it('should fill up password field', () => {
-        LoginPage.password.setValue('11111');
+        LoginPage.password.setValue('11111+');
     });
 
     it('should submit form', () => {
@@ -31,6 +30,6 @@ describe('LOGIN (Positive Testing)', () => {
     });
 
     it('should check h1 text on landing page', () => {
-        expect(ProfilePage.h1.getText()).eq('Test Testovich')
+        expect(LoginPage.h1.getText()).eq('User Login')
     });
 });

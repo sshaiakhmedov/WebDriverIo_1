@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import LoginPage from "../login/LoginPage";
 import ProfilePage from "./ProfilePage";
 
-describe('PROFILE', () =>{
+describe('PROFILE (Positive Testing)', () =>{
     before(() =>{
         LoginPage.login();
     });

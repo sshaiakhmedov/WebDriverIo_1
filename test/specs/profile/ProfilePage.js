@@ -7,8 +7,8 @@ class ProfilePage extends Page{
     }
 }
 
-export default  new ProfilePage();
-
+export default new ProfilePage();
+//через new - это экземпляр класса, как конкретный пример(артикль the). А класс это как артикль а.
 /*import-export: есть связка
 import -если имопртируем другой класс
 export default -если нужно использовать, презентовать класс в другом классе.
