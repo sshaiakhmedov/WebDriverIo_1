@@ -1,13 +1,13 @@
 {
   "name": "WebDriverIo_1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testing stage.pasv.us with POM",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js"
   },
   "keywords": [],
-  "author": "sulaiman",
+  "author": "Sulaiman Shaiakhmedov",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.6.2",
