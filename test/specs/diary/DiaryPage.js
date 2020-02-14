@@ -53,6 +53,11 @@ class DiaryPage extends Page {
             browser.pause(3000);
         }
 
+        get newReport(){
+        return browser.$('//div[@class="col"]//div[@class="mt-2"]');
+
+        }
+    //const element = $('//input[contains(@name,\'hours\')]')
 }
 export default new DiaryPage();
 //Добавляя new мы экспортируем экземляр класса, а не сам класс
