@@ -1,41 +1,60 @@
-import Page from '../Page.js'; //типа приглашение
+import Page from "../Page";
 
 //через extends мы inheritance делаем одного класса на другой
 //class - способ организации фукнций и каких-то значений.
-//как Objects нужны чтобы организовать данные, - например Array, Object.
-class LoginPage extends Page {
+class DiaryPage extends Page {
 
-    get email () {
-        return browser.$('//input[@name="email"]');
-    };
-    //когда мы будем запускать свойство email => запускайте return...
+    open(path) {
+        super.open('https://stage.pasv.us/diary');
+    }
 
-    get password () {
-        return browser.$('//input[@name="password"]');
-    };
+    get h1() {
+        return browser.$('//h1[@qa="daily-title"]')
+    }
 
-       get  submitBtn () {
-            return browser.$('//button[@type="submit"]');
+    get CreateDayReportButton () {
+        return browser.$('//a[@qa="create-day-report-button"]');
     };
 
-       get h1 () {
-           return browser.$('//h1');
-       };
-
-    login () {
-        this.open();
-        this.email.setValue('olya6avg@gmail.com');
-        this.password.setValue('11111');
-        this.submitBtn.click();
-        browser.pause(3000);
+    get h1dayReportForm () {
+        return browser.$('//h1');
     };
 
-    //open() - method
-    open (){
-        super.open('https://stage.pasv.us/user/login');
+    get submitButtonInActive(){
+        return browser.$('//*[@type="submit"]');
+    }
+
+   get watchedLectures () {
+        return browser.$('//input[@id="input-3"]');
     };
+
+    get morale() {
+        return browser.$('//select[@name="morale"]');
+    }
+
+    get hrsStudy() {
+        return browser.$('//input[@name="hours"]');
+    }
+
+    get dayDescription() {
+        return browser.$('//textarea[@name="description"]');
+    }
+
+    get submitButton() {
+        return browser.$('//button[@type="submit"]');
+    }
+
+    dayReportForm() {
+            this.watchedLectures.click();
+            this.morale.selectByVisibleText('7');
+            this.hrsStudy.setValue('4');
+            this.dayDescription.setValue('today i was doing this and that and this and that and this');
+            this.submitButton.click();
+            browser.pause(3000);
+        }
+
 }
-export default new LoginPage();
+export default new DiaryPage();
 //Добавляя new мы экспортируем экземляр класса, а не сам класс
 
 

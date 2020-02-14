@@ -1,36 +1,45 @@
 import { expect } from 'chai';
-import LoginPage from './LoginPage';
-import ProfilePage from "../profile/ProfilePage";
+import DiaryPage from "./DiaryPage";
+import LoginPage from "../login/LoginPage";
 
-//login.spec - пишем spec, чтобы определялся как файл тестирования
+describe('DIARY (Positive Testing)', () => {
+    before(() =>{
+        LoginPage.login();
+        DiaryPage.open();
+        browser.pause(4000);
 
-
-describe('LOGIN (Positive Testing)', () => {
-    it('should open login page', () => {
-        LoginPage.open();
-        browser.pause(5000);
     });
 
-    it('should have correct title',() => {
-        const actual = LoginPage.h1.getText();
-        const expected = 'User Login';
+    it('should have correct  h1 title', () => {
+        let actual=DiaryPage.h1.getText();
+        let expected='Daily reports';
         expect(actual).eq(expected);
+        browser.pause(500);
     });
 
-    it('should fill e-mail field',() => {
-        LoginPage.email.setValue('olya6avg@gmail.com');
+    it('shall click `Create day report` and be redirected',()=>{
+        DiaryPage.CreateDayReportButton.click();
+        browser.pause(2000);
     });
 
-    it('should fill up password field', () => {
-        LoginPage.password.setValue('11111');
+    it('shall check Title',()=>{
+        let actual=DiaryPage.h1dayReportForm.getText();
+        let expected="Create day report";
+        expect(actual).eq(expected);
+        browser.pause(500);
     });
 
-    it('should submit form', () => {
-        LoginPage.submitBtn.click();
-        browser.pause(3000);
-    });
+     it('Shall check `Submit` button be Inactive',()=>{
+         const actual=DiaryPage.submitButtonInActive.isClickable();
+         expect(actual).be.false;
+        browser.pause(400);
+     });
 
-    it('should check h1 text on landing page', () => {
-        expect(ProfilePage.h1.getText()).eq('Test Testovich')
-    });
+    it('Shall fill up the form',()=>{
+       DiaryPage.dayReportForm();
+       browser.pause(1000);
+    })
+
+
+
 });

@@ -30,7 +30,9 @@ describe('LOGIN (Positive Testing)', () => {
         browser.pause(3000);
     });
 
-    it('should check h1 text on landing page', () => {
-        expect(ProfilePage.h1.getText()).eq('Test Testovich')
+    it('should check h1 text on Profile page', () => {
+        const actual=ProfilePage.h1.getText();
+        const expected='Test Testovich';
+        expect(actual).eq(expected);
     });
 });
