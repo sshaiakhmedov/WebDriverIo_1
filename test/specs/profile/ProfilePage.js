@@ -42,6 +42,45 @@ class ProfilePage extends Page {
         return browser.$('//div[@class="col"]//img');
     }
 
+    get countDailyReports() {
+        return browser.$('//div[@qa="diary-list"]//span[@class="badge badge-light"]');
+    }
+
+    get userDropDownClickable(){
+        return browser.$('//li[contains(@class, \'dropdown\')]');
+    }
+
+    get userDropDownClicked(){
+        return browser.$('//li[contains(@class, \'dropdown show\')]');
+    }
+
+    get userMenuProfile(){
+        return browser.$('//li//div//a');
+    }
+
+    get userMenuProfile1(){
+        return browser.$('//li//div//a//button[1]');
+    }
+
+    get userMenuSettings(){
+        return browser.$('//li[contains(@class, \'dropdown\')]//div');
+    }
+
+    get userMenuSettings1(){
+        return browser.$('//li//div//a[2]//button[1]');
+    }
+
+    get userMenuLogout() {
+        return browser.$('//li[contains(@class, \'dropdown\')]//div');
+    }
+
+    get userMenuLogout1(){
+        return browser.$('//*[@id="user-section"]/div/ul/li/div/button');
+    }
+
+    get userMenuLogout2(){
+        return browser.$('//li[@class="dropdown show nav-item"]//div//button[2]');
+    }
 }
 
 export default new ProfilePage();
