@@ -4,7 +4,7 @@ import LoginPage from './LoginPage';
 describe('LOGIN (Negative Testing)', () => {
     it('should open login page', () => {
         LoginPage.open();
-        browser.pause(5000);
+        browser.pause(3000);
     });
 
     it('should have correct title',() => {

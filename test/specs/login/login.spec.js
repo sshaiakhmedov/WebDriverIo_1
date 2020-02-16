@@ -6,7 +6,7 @@ import ProfilePage from "../profile/ProfilePage";
 
 
 describe('LOGIN (Positive Testing)', () => {
-    it('should open login page', () => {
+    it('should open Login page', () => {
         LoginPage.open();
         browser.pause(5000);
     });
