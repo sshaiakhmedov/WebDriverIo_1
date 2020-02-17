@@ -2,6 +2,10 @@ import Page from "../Page";
 
 class ProfilePage extends Page {
 
+    get title() {
+        return browser.$('//span[@id="site-name"]');
+    }
+
     get h1() {
         return browser.$('//h1');
     }
@@ -10,35 +14,35 @@ class ProfilePage extends Page {
         return browser.$('//div[@id="user-section"]//span[@class="ml-1 mr-4"]');
     }
 
-    get h1Drop (){
+    get h1Drop() {
         return browser.$('//li[@class="dropdown nav-item"]//a');
     }
 
-    get h3About(){
+    get h3About() {
         return browser.$('//div[@qa="about"]//h3');
     }
 
-    get h3Goals(){
+    get h3Goals() {
         return browser.$('//div[@qa="goals"]//h3');
     }
 
-    get h3CompletedChallenges(){
+    get h3CompletedChallenges() {
         return browser.$('//div[@qa="kata-list"]//h3');
     }
 
-    get h3DailyReports(){
+    get h3DailyReports() {
         return browser.$('//div[@qa="diary-list"]//h3');
     }
 
-    get userRole (){
+    get userRole() {
         return browser.$('//span[@qa="user-roles"]//span[@qa="role"]');
     }
 
-    get coin1(){
+    get coin1() {
         return browser.$('//ul//img');
     }
 
-    get coin2(){
+    get coin2() {
         return browser.$('//div[@class="col"]//img');
     }
 
@@ -46,27 +50,29 @@ class ProfilePage extends Page {
         return browser.$('//div[@qa="diary-list"]//span[@class="badge badge-light"]');
     }
 
-    get userDropDownClickable(){
+    get userDropDownClickable() {
         return browser.$('//li[contains(@class, \'dropdown\')]');
     }
 
-    get userDropDownClicked(){
+    get userDropDownClicked() {
         return browser.$('//li[contains(@class, \'dropdown show\')]');
     }
 
-    get userMenuProfile(){
+    //Profile Menu Dropdown
+
+    get userMenuProfile() {
         return browser.$('//li//div//a');
     }
 
-    get userMenuProfile1(){
+    get userMenuProfile1() {
         return browser.$('//li//div//a//button[1]');
     }
 
-    get userMenuSettings(){
+    get userMenuSettings() {
         return browser.$('//li[contains(@class, \'dropdown\')]//div');
     }
 
-    get userMenuSettings1(){
+    get userMenuSettings1() {
         return browser.$('//li//div//a[2]//button[1]');
     }
 
@@ -74,13 +80,26 @@ class ProfilePage extends Page {
         return browser.$('//li[contains(@class, \'dropdown\')]//div');
     }
 
-    get userMenuLogout1(){
+    get userMenuLogout1() {
         return browser.$('//*[@id="user-section"]/div/ul/li/div/button');
     }
 
-    get userMenuLogout2(){
-        return browser.$('//li[@class="dropdown show nav-item"]//div//button[2]');
+    get userMenuLogout2() {
+        return browser.$('//button[text()="Logout"]');
     }
+
+    get likeButton() {
+        return browser.$('//div[15]//button[@qa="like-button"]');
+    }
+
+    get likeNotificationTitle() {
+        return browser.$('//h4[contains(text(),"Diary Like")]');
+    }
+
+    get createDayReport(){
+        return browser.$('//a[contains(text(),"Create day report")]');
+    }
+
 }
 
 export default new ProfilePage();

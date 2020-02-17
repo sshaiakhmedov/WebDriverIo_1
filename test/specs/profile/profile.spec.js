@@ -1,10 +1,18 @@
 import {expect} from 'chai';
 import LoginPage from "../login/LoginPage";
 import ProfilePage from './ProfilePage';
+import DiaryPage from "../diary/DiaryPage";
+import CreateDayReport from "../diary/CreateDayReport";
 
 describe('PROFILE (Positive Testing)', () =>{
     before(() =>{
         LoginPage.login();
+        browser.pause(500);
+    });
+
+    it('should have correct title `Progress Monitor`', function () {
+       const actual=ProfilePage.title.getText();
+       expect(actual).eq('Progress Monitor');
     });
 
     it('should go to profile Page and check h1', ()=>{
@@ -94,7 +102,39 @@ describe('PROFILE (Positive Testing)', () =>{
     it('should ', function () {
         const actual=ProfilePage.userMenuLogout2.isClickable();
         expect(actual).be.true;
-
     });
+
+    it('should have like button to be clickable', function () {
+        const actual=ProfilePage.likeButton.isClickable();
+        expect(actual).be.true;
+    });
+
+    it('should show notification when click on Like button', function () {
+        ProfilePage.likeButton.click();
+        const actual=ProfilePage.likeNotificationTitle.getText();
+        expect(actual).includes('Success');
+    });
+
+    it('should click `Create day report` button ', function () {
+       const actual=ProfilePage.createDayReport.isClickable();
+       expect(actual).to.be.true;
+       ProfilePage.createDayReport.click();
+    });
+
+    it('should have correct h1 title after redirection', function () {
+        CreateDayReport.open();
+        browser.pause(500);
+        const actual=CreateDayReport.h1dayReportForm.getText();
+        const expected='Create day report';
+        expect(actual).eq(expected);
+    });
+
+    // it('should check the like count', function () {
+    //     const actual=ProfilePage.likeButton.click();
+    //     browser.url('https://stage.pasv.us/user/5ddd6a9f7fe541003cb3e188');
+    //     browser.pause(1000);
+    //     const expected=ProfilePage.likeButtonCount.getValue();
+    //     expect(expected).above(0);
+    //});
 
 });
