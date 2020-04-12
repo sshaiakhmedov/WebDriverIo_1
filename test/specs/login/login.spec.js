@@ -2,8 +2,6 @@ import { expect } from 'chai';
 import LoginPage from './LoginPage';
 import ProfilePage from "../profile/ProfilePage";
 
-//login.spec - пишем spec, чтобы определялся как файл тестирования
-
 
 describe('LOGIN (Positive Testing)', () => {
     it('should open Login page', () => {
